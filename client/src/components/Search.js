@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { PageHeader, FormControl, Grid, Row, Col, ControlLabel } from 'react-bootstrap';
+import { FormControl, Grid, Row, Col, ControlLabel } from 'react-bootstrap';
+
 class Search extends Component {
 	constructor(props) {
 		super(props);

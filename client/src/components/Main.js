@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import ArticleList from './ArticleList';
-import Search from './Search';
+import { ArticleList, Search, SiteNav } from './index.js';
 import moment from 'moment';
-import { Nav, Navbar, NavItem, Row, Grid, Col, Well } from 'react-bootstrap';
-import { Link, Route } from 'react-router-dom';
+import { Row, Grid, Col, Well } from 'react-bootstrap';
+import { Route } from 'react-router-dom';
 import _ from 'lodash';
 
 class Main extends Component {
@@ -65,12 +64,10 @@ class Main extends Component {
 	handleSearchChange = (searchState) => {
 		var startUnix = searchState.startDate ? moment(searchState.startDate).unix() : 0;
 		var endUnix = searchState.endDate ? moment(searchState.endDate).unix() : 2547992886;
-		var currentUnix = moment().unix();
-		var subject = searchState.subject;
 
 		var newArray = _.filter(this.state.articles, function(article) {
 			return (
-				article.title.toLowerCase().includes(subject.toLowerCase()) &&
+				article.title.toLowerCase().includes(searchState.subject.toLowerCase()) &&
 				(moment(article.created_date).unix() > startUnix && moment(article.created_date).unix() < endUnix)
 			);
 		});
@@ -81,21 +78,7 @@ class Main extends Component {
 	render() {
 		return (
 			<div>
-				<Navbar>
-					<Navbar.Header>
-						<Navbar.Brand>
-							<Link to="/">New York Times Search</Link>
-						</Navbar.Brand>
-					</Navbar.Header>
-					<Nav>
-						<NavItem eventKey={1} href="#">
-							<Link to="/">Home</Link>
-						</NavItem>
-						<NavItem eventKey={2} href="#">
-							<Link to="/saved">Saved</Link>
-						</NavItem>
-					</Nav>
-				</Navbar>;
+				<SiteNav />
 				<Route
 					path="/"
 					render={(props) => (

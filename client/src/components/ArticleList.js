@@ -1,6 +1,5 @@
 import React from 'react';
 import Article from './Article';
-import moment from 'moment';
 
 const ArticleList = (props) => {
 	return (
