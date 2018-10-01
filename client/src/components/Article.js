@@ -36,7 +36,9 @@ class Article extends Component {
 	render() {
 		return (
 			<div style={{ textAlign: 'center' }}>
-				<h3>{this.props.article.title}</h3>
+				<h3>
+					<a href={this.props.article.url}>{this.props.article.title}</a>
+				</h3>
 				<div>{this.props.article.abstract}</div>
 				<div>{moment(this.props.article.created_date).format('MM-DD-YYYY')} </div>
 				{this.props.article.multimedia.slice(2, 3).map(function(media) {
