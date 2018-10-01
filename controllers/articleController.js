@@ -1,4 +1,3 @@
-var Note = require('../models/note.js');
 var Article = require('../models/article.js');
 require('dotenv').config();
 var axios = require('axios');
@@ -20,7 +19,8 @@ module.exports = {
 			title: req.body.title,
 			url: req.body.url,
 			published: req.body.published,
-			abstract: req.body.abstract
+			abstract: req.body.abstract,
+			multimedia: req.body.multimedia
 		};
 		var entry = new Article(result);
 		entry.save(function(err, doc) {

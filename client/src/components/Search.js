@@ -8,10 +8,9 @@ class Search extends Component {
 			startDate: null,
 			endDate: null
 		};
-		this.handleChange = this.handleChange.bind(this);
 	}
 
-	handleChange(e) {
+	handleChange = (e) => {
 		this.setState(
 			{
 				[e.target.name]: e.target.value
@@ -20,12 +19,11 @@ class Search extends Component {
 				this.props.handleSearchChange(this.state);
 			}
 		);
-	}
+	};
 
 	render() {
 		return (
 			<div>
-				<PageHeader>Search Articles</PageHeader>
 				<form>
 					<Grid>
 						<Row>

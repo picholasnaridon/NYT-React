@@ -13,6 +13,9 @@ var ArticleSchema = new Schema({
 		type: String,
 		default: 'No abstract Available'
 	},
+	multimedia: {
+		type: Array
+	},
 	published: {
 		type: String
 	},
