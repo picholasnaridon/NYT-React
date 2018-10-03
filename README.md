@@ -13,6 +13,8 @@ This is a full stack Javascript app that pulls in article data from the New York
 * [node.js] - evented I/O for the backend
 * [Express] - fast node.js network app framework
 * [MongoDB + Mongoose] - NoSQL database for storing saved articles 
+* [Lodash] - Used for some filtering/sorting of search results
+
 
 ### Install
 
